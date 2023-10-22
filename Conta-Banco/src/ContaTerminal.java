@@ -1,10 +1,11 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
 
     public static void main(String[] args) throws Exception {
 
-        Scanner Scanner = new Scanner(System.in);
+        Scanner Scanner = new Scanner(System.in).useLocale(Locale.US);
         String NumeroConta;
         String Agencia;
         String NomeCliente;
@@ -20,6 +21,9 @@ public class ContaTerminal {
 
         System.out.println("Por favor, insira seu saldo.");
         Saldo = Scanner.nextDouble();
+        Scanner.nextLine();
+
+        System.out.printf("Olá %s , obrigado por criar uma conta em nosso banco, sua agência é %s , conta %s e seu saldo %s já está disponível para saque" , NomeCliente , Agencia , NumeroConta , Saldo);
 
         
     }
